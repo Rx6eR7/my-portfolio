@@ -6,7 +6,7 @@ Welcome to my personal coding portfolio! Here you'll find some of my favorite pr
 
 ## About Me
 
-Hi! I'm [Your Name], a beginner programmer passionate about learning new skills and creating cool projects. I’m currently focused on HTML, CSS, JavaScript, and Python.
+Hi! I'm Robert, a beginner programmer passionate about learning new skills and creating cool projects. I’m currently focused on HTML, CSS, JavaScript, and Python.
 
 ---
 

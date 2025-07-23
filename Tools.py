@@ -1,11 +1,25 @@
+try:
+    import msvcrt
+    WINDOWS = True
+except ImportError:
+    msvcrt = None
+    WINDOWS = False
+
+try:
+    from colorama import init, Fore
+except ImportError:
+    import subprocess
+    import sys
+    print("Installing 'colorama'...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "colorama"])
+    from colorama import init, Fore
+
 import random
 import os
 import sys
 import socket
 import string
 import tempfile
-import msvcrt
-from colorama import init, Fore
 
 init(autoreset=True)
 temp_dir = tempfile.gettempdir()
@@ -122,9 +136,10 @@ def main():
         print("4. Generate a password")
         print("\nPress ESC to exit at any time.\n")
 
-        if msvcrt.kbhit():
+        # Only check for ESC on Windows with msvcrt available
+        if WINDOWS and msvcrt and msvcrt.kbhit():
             key = msvcrt.getch()
-            if key == b'\x1b':  # ESC
+            if key == b'\x1b':  # ESC key
                 print("Exiting...")
                 sys.exit()
 
